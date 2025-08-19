@@ -1,0 +1,19 @@
+services:
+  unifi:
+    image: jacobalberty/unifi:latest
+    container_name: unifi
+    hostname: unifi
+    pull_policy: always
+    restart: always
+    user: unifi
+    environment:
+      - TZ='America/Caracas'
+    ports:
+      - 8080:8080
+      - 8443:8443
+      - 8843:8843
+      - 8880:8880
+      - 6789:6789
+      - 3478:3478/udp
+    volumes:
+      - ./unifi:/unifi
